@@ -289,10 +289,17 @@ gulp.task('default', ['clean'], function() {
   gulp.start('build');
 });
 
+function throwError(taskName, msg) {
+    throw new gutil.PluginError({
+        plugin: taskName,
+        message: msg,
+    });
+}
+
 gulp.task('deploy', function() {
     // Dirs and Files to sync
     rsyncPaths = [path.dist, 'lang', 'lib', 'templates', './*.php', './style.css' ];
-
+        
     // default options for rsync
     rsyncConf = {
         progress: true,
@@ -301,21 +308,22 @@ gulp.task('deploy', function() {
         emptyDirectories: true,
         recursive: true,
         clean: true,
+        dryrun: true,
+        command: true,
         exclude: [],
     };
 
     // dev environment
     if(argv.dev) {
-        rsyncConf.hostname = ''; //hostname
-        rsyncConf.username = ''; //ssh username
-        rsyncConf.destination = ''; // path to uploaded files
-    else if (argv.production) {
-
+        rsyncConf.hostname = 'ec2-54-235-77-233.compute-1.amazonaws.com'; //hostname
+        rsyncConf.username = 'ec2-user'; //ssh username
+        rsyncConf.destination = '../../var/www/html/testProject'; // path to uploaded files
+    // prod environment
+    } else if (argv.production) {
         rsyncConf.hostname = ''; // hostname
         rsyncConf.username = ''; // ssh username
         rsyncConf.destination = ''; // path where uploaded files go
                 
-              
     // Missing/Invalid Target  
     } else {
         throwError('deploy', gutil.colors.red('Missing or invalid target'));
@@ -333,10 +341,3 @@ gulp.task('deploy', function() {
     ))
     .pipe(rsync(rsyncConf));
 });
-                
-function throwError(taskName, msg) {
-    throw new gutil.PluginError({
-        plugin: taskName,
-        message: msg
-    });
-}
