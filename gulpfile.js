@@ -20,7 +20,8 @@ var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
 var prompt       = require('gulp-prompt');
-var rsync        = require('gulp-rsync');
+var sftp         = require('gulp-sftp');
+var fs           = require('fs');
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./assets/manifest.json');
@@ -296,48 +297,48 @@ function throwError(taskName, msg) {
     });
 }
 
-gulp.task('deploy', function() {
-    // Dirs and Files to sync
-    rsyncPaths = [path.dist, 'lang', 'lib', 'templates', './*.php', './style.css' ];
-        
-    // default options for rsync
-    rsyncConf = {
-        progress: true,
-        incremental: true,
-        relative: true,
-        emptyDirectories: true,
-        recursive: true,
-        clean: true,
-        dryrun: true,
-        command: true,
-        exclude: [],
+function sftpOpts(path) {
+    return {
+        host: 'ec2-54-235-77-233.compute-1.amazonaws.com',
+        user: 'ec2-user',
+        key: '~/Config/Twist.pem',
+        remotePath: "../../var/www/html/path/to/theme/" + (path || "")
     };
+}
 
-    // dev environment
-    if(argv.dev) {
-        rsyncConf.hostname = 'ec2-54-235-77-233.compute-1.amazonaws.com'; //hostname
-        rsyncConf.username = 'ec2-user'; //ssh username
-        rsyncConf.destination = '../../var/www/html/testProject'; // path to uploaded files
-    // prod environment
-    } else if (argv.production) {
-        rsyncConf.hostname = ''; // hostname
-        rsyncConf.username = ''; // ssh username
-        rsyncConf.destination = ''; // path where uploaded files go
-                
-    // Missing/Invalid Target  
-    } else {
-        throwError('deploy', gutil.colors.red('Missing or invalid target'));
-    }
-                        
+gulp.task('deployJSON', function() {
+    return gulp.src('dist/*.json')
+        .pipe(sftp(sftpOpts('dist')));
+});
+gulp.task('deployCSS', function() {
+    return gulp.src('./dist/styles/*.css')
+        .pipe(sftp(sftpOpts('dist/styles/')));
+});
+gulp.task('deployImages', function() {
+    return gulp.src('dist/images/*.*')
+        .pipe(sftp(sftpOpts('dist/images')));
+});
+gulp.task('deployJS', function() {
+    return gulp.src('dist/scripts/*.js')
+        .pipe(sftp(sftpOpts('dist/scripts')));
+});
+gulp.task('deployFonts', function() {
+    return gulp.src('dist/fonts/*.*')
+        .pipe(sftp(sftpOpts('dist/fonts')));
+});
+gulp.task('deployLib', function() {
+    return gulp.src('lib/*.php')
+        .pipe(sftp(sftpOpts('lib')));
+});
+gulp.task('deployTemplates', function() {
+    return gulp.src('templates/*.php')
+        .pipe(sftp(sftpOpts('templates')));
+});
+gulp.task('deployBase', function() {
+    return gulp.src(['./*.php', '.style.css'])
+        .pipe(sftp(sftpOpts()));
+});
+gulp.task('deploy', function() {
+    runSequence('deployJSON', 'deployCSS', 'deployImages', 'deployJS', 'deployFonts', 'deployLib', 'deployTemplates', 'deployBase'):
 
-    // Use gulp-rsync to sync the files 
-    return gulp.src(rsyncPaths)
-    .pipe(gulpif(
-        argv.production, 
-        prompt.confirm({
-            message: 'Heads Up! Are you SURE you want to push to PRODUCTION?',
-            default: false
-        })
-    ))
-    .pipe(rsync(rsyncConf));
 });
