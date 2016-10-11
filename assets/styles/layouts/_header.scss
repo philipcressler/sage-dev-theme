@@ -1,0 +1,154 @@
+#header {
+	height: 100px;
+	z-index: 2;
+	transition: .8s;
+    -webkit-transition: .8s;
+    
+	.container>.navbar-header {
+    	margin-right: 0px;
+    	margin-left: -15px;
+	}
+
+	#menu-primary-navigation {
+		margin-right: 75px;
+		float:right;
+	}
+	.navbar-toggle {
+	    border: none;
+	    margin-right: 40px;
+	    margin-top: 20px;
+	    .icon-bar {
+	    	background-color: white;
+	    	height: 1px;
+	    }
+	}
+	.navbar-toggle .icon-bar+.icon-bar {
+		margin-top: 6px;
+	}
+	a {
+		color: white;
+		font-family: 'Montserrat-Bold';
+		font-size: 14px;
+		line-height: 50px;
+	    transition: 0.8s;
+	    -webkit-transition: 0.8s;
+		&:hover {
+			color: darken(white, 20%);
+			background-color: transparent;
+		}
+	}
+	.header-cta {
+		line-height: 80px;
+	}
+	.navbar-brand {
+	    font-size: 24px;
+	    line-height: 50px;
+	    width: 250px;
+	    img {
+	    	width: 231px;
+	    	margin-left: 40px;
+	    	transition: .8s;
+    		-webkit-transition: .8s;
+	    }
+	}
+
+	.navbar-container {
+	    padding: 10px 0 10px 0;
+
+	}
+	.navbar-collapse {
+		&.collapsing {
+			background-color: $brand-primary;
+		}
+		text-align: center;
+		&.in {
+			background-color: $brand-primary;
+			box-shadow: 0 2.5px 3.5px 0.5px rgba(0, 0, 0, 0.2);
+		}
+	}
+	&.fixed-theme {
+	    background-color: white;
+	    height: 80px;
+	    box-shadow: 0 2.5px 3.5px 0.5px rgba(0, 0, 0, 0.2);
+	    a {
+	    	color: $text-color !important;
+	    	font-family: 'Montserrat-Light' !important;
+	    	&:hover {
+				color: $brand-primary !important;
+			}
+	    }
+	    .navbar-toggle {
+		    margin-right: 40px;
+		    margin-top: 20px;
+		    .icon-bar {
+	    		background-color: $brand-primary
+	    	}
+		}
+		.navbar-collapse.collapsing, .navbar-collapse.in {
+			background-color: white;
+		}
+	}
+
+	.navbar-brand.fixed-theme {
+	    margin-top: 10px;
+	    width: 198px;
+	}
+	.navbar-brand.fixed-theme img {
+		width: 168px !important;
+	}
+
+	.navbar-container.fixed-theme {
+	    padding: 0;
+	}
+	.navbar-brand.fixed-theme,
+	.navbar-container.fixed-theme,
+	.navbar.navbar-fixed-top.fixed-theme,
+	.navbar-brand,
+	.navbar-container{
+	    transition: 0.8s;
+	    -webkit-transition: 0.8s;
+	}
+	.navbar-collapse.in { 
+		max-height: 100% !important; 
+	}
+	.navbar-collapse.collapse {
+		height: initial !important;
+	}
+	.collapse.in #menu-primary-navigation {
+		float: none;
+		margin-right: -15px;
+	}
+
+	.collapsing {
+		box-shadow: none;
+	}
+	.collapsing #menu-primary-navigation {
+		float: none;
+		margin-right: -15px;
+	}
+}
+
+.navbar-fixed-top {
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	.nav>li>a {
+		padding: 15px 10px;
+		font-size: 12px;
+	}
+	#menu-cta {
+		margin-right: 12px;
+		a {
+			font-size: 12px;
+		}
+	}
+	#header {
+		a {
+			font-size: 12px;
+		}
+		#menu-primary-navigation {
+			margin-right: 0px;
+		}
+	} 
+}

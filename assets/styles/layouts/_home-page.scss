@@ -1,0 +1,587 @@
+/********************************
+* HOMEPAGE
+********************************/
+
+.home-hero {
+
+	&__background {
+		position: absolute;
+		top: -120px;
+		width: 100%;
+		
+		img {
+			width: 100%;
+		}
+	}
+	.row-eq.row {
+		margin-bottom: -80px;
+	}
+	
+	&__container {
+		height: 100%;
+		margin-top: -50px;
+	}
+
+	&__heading {
+		text-align: center;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		h1 {
+			color: white;
+		}
+	}
+	&__xs-container {
+		position:absolute;
+		bottom: 10%;
+	}
+
+	&__cta--xs {
+		text-align: center;
+	}
+
+	&__text--xs {
+		margin-right: 15px;
+		text-align: center;
+	}
+
+	&__icon-container--xs {
+		list-style: none;
+		text-align: center;
+		height: 100px;
+		margin: 0 auto;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		width: 282px;
+		padding: 0;
+
+		li {
+			float: left;
+			margin: 12px;
+			width: 70px;
+			img {
+				max-height: 45px;
+			}
+		}
+
+		p {
+			font-family: 'Montserrat-Black';
+			font-size: 12px;
+			letter-spacing: 1px;
+			line-height: 14px;
+			margin-top: 20%;
+
+		}
+	}
+}
+
+.home-software {
+	
+	&__heading--xs {
+		text-align: center;
+	}
+
+	&__image {
+		height: 250px;
+		margin: 20px;
+		background-image: url('../images/home-software-image-full.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+	}
+	&__cta {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	&__text {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+}
+
+.home-studio {
+	&__image {
+		background-image: url('../images/home-page-studio-image-mobile.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		height: 250px;
+		margin: 20px;
+	}
+	&__cta {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	&__text {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	&__heading--xs {
+		text-align: center;
+	}
+}
+
+.home-insights {
+	&__heading, &__heading-xs {
+		h2 {
+			color: white;
+		}
+	}
+	&__container-xs {
+		background-image: url(../images/Insightful_Employees_Mobile.png);
+		height: 700px;
+		background-size: cover;
+
+	}
+
+	&__background-xs {
+		padding-top: 50px;
+	}
+
+	&__text {
+		margin-top: 35%;
+		text-align: center;
+		p {
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+		a {
+			margin-top: 30px;
+		}
+	}
+	p {
+		color: white;
+	}
+}
+
+.home-testimonial {
+	&__heading {
+		text-align: center;
+		margin-top: 50px;
+	}
+
+	&__card {
+	    box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+	    padding: 20px;
+	    background-color: #fff;
+	    border-radius: 4px;
+	    margin-top: 40px;
+
+	    &__top {
+	    	height: 50px;
+	    }
+	    &__img {
+	    	float: left;
+	    }
+	    &__credentials {
+	    	float: left;
+	    	margin-left: 20px;
+	    	line-height: 25px;
+
+	    }
+	    &__logo {
+	    	float: right;
+	    	margin-top: 10px;
+	    }
+	    &__bottom {
+	    	margin-top: 20px;
+	    }
+	}
+
+	&__name {
+		font-family: "Montserrat-Bold";
+		display: block;
+	}
+
+	&__role {
+		font-family: "Montserrat-Light";
+		display: block;
+	}
+}
+
+.home-start {
+	padding-top: 50px;
+
+	&__heading {
+		text-align:center;
+		margin-bottom: 40px;
+	}
+
+	.submit-group {
+		margin-top: 40px;
+	}
+
+	.group:not(.submit-group) {
+		margin-left: 40px;
+	}
+
+	&__container {
+		height: 500px;
+		background-image: url('../images/blue-desk-mobile.png');
+		background-repeat: no-repeat;
+		background-position: bottom;
+		background-size: contain;
+
+	}
+	.container-fluid {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+@media (min-width: 768px) {
+	.home-hero {
+
+		&__container {
+			margin-top: 0px;
+		}
+		&__container-xs {}
+
+		.row.row-eq {
+			padding-top: 120px;
+			margin-top: -120px;
+			margin-bottom: -160px;
+		}
+
+		&__background {
+			
+		}
+
+		&__heading {
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		&__text {
+			text-align: center;
+			width: 80%;
+			margin: 0 auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+
+			p {
+				color: white;
+			}
+		}
+
+		&__cta {
+			position: absolute;
+			bottom: 18.5%;
+			text-align: center;
+			width: 96%;
+		}
+
+		&__icon-container {
+			list-style: none;
+			text-align: center;
+			margin: 0 auto;
+			width: 400px;
+			height: 100px;
+
+			li {
+				float: left;
+				margin: 20px;
+				img {
+					
+				}
+			}
+
+			p {
+				font-family: 'Montserrat-Black';
+				font-size: 12px;
+				letter-spacing: 1px;
+				line-height: 14px;
+				margin-top: 20%;
+				color: white;
+			}		
+		}
+	}
+
+	.home-software {
+		&__heading {
+
+		}
+
+		&__text {
+		    width: 80%;
+    		margin: 0 auto;
+		}
+
+		&__image {
+			height: 400px;
+		}
+	}
+
+	.home-studio {
+		&__heading {
+
+		}
+
+		&__text {
+		    width: 80%;
+    		margin: 0 auto;
+		}
+
+		&__image {
+			height: 400px;
+		}
+	}
+
+	.home-insights {
+		&__container-xs {
+			height: 600px;
+		}
+
+		&__background-xs {
+			padding-top: 20%;
+		}
+
+		&__text {
+			margin-top: 10%;
+			text-align: left;
+			p {
+				margin-left: 0px;
+			}
+		}
+	}
+	.home-start {
+
+		.group:not(.submit-group) {
+			margin-left: 80px;
+		}
+
+		&__container {
+			height: 600px;
+			background-image: url('../images/blue-desk-desktop.png');
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.home-hero {
+		padding-top: 0px;
+
+		&__icon-container {
+			margin-left: 8%;
+			padding: 0px;
+			margin-top: 20px;
+
+			li {
+				img {
+					height: 70px;
+				}
+			}
+		}
+
+		&__heading {
+			text-align: left;
+		}
+		&__text {
+			text-align: left;
+			p {
+				color: white;
+			}
+		}
+		&__cta {
+			position: relative;
+			bottom: 0;
+			text-align: left;
+			margin-left: 10%;
+		}
+
+		&__container {
+			
+		}
+	}
+
+	.home-software {
+		padding-top: 75px;
+		&__image {
+			margin: 0;
+			background-image: url('../images/home-page-software-image.png');
+			padding-left: 0px;
+			height: 600px;
+		}
+
+		&__text {
+			width: 100%;
+			text-align: left;
+			p {
+				margin-top: 20px;
+				margin-bottom: 20px;
+
+			}
+		}
+
+		&__cta {
+			text-align: left;
+		}
+
+		&__copy {
+			padding-left: 10%;
+		}
+	}
+
+	.home-studio {
+		padding-top: 50px;
+		&__image {
+			margin: 0;
+			background-image: url('../images/home-page-studio-image.png');
+			background-repeat: no-repeat;
+			background-position: right;
+			height: 800px;
+		}
+		&__text {
+			width: 100%;
+			text-align: left;
+			p {
+				margin-top: 20px;
+				margin-bottom: 20px;
+
+			}
+		}
+
+		&__cta {
+			text-align: left;
+		}
+
+		&__container {
+			padding-top: 8%;
+			padding-left: 10%;
+		}
+	}
+
+	.home-insights {
+		&__container {
+			background-image: url('../images/Insightful_Employees_Extended.png');
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 800px;
+
+			& > div {
+				margin-top: 5.5%;
+				height: calc(100% - 5.5%);
+			}
+		}
+
+		&__icon {
+			padding-top: 40px;
+		}
+
+		&__text {
+			a {
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			p {
+				margin-right: 15px;
+			}
+		}
+	}
+
+	.home-start {
+		.submit-group {
+			margin-top: 0;
+		}
+		.group:not(.submit-group) {
+			margin-left: 20%;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.home-hero {
+		&__icon-container {
+			margin-top: 40px;
+			margin-left: 18%;
+
+			li {
+				img {
+					height: 90px;
+				}
+			}
+		}
+		&__heading {
+			width: 60%;
+		}
+
+		&__text {
+			width: 60%;
+			p {
+				font-size: 16px;
+			}
+		}
+
+		&__cta {
+			margin-left: 20%;
+		}
+
+		&__container {
+			margin-top: 0px;
+			margin-bottom: 10%;
+		}
+	}
+
+	.home-software {
+
+		&__image {
+			height: 490px;
+			background-image: url('../images/home-software-image-full.png');
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+		&__text {
+			width: 80%;
+			margin-left: 0px;
+		}
+	}
+
+	.home-studio {
+		&__text {
+			width: 80%;
+
+			margin-left: 0px;
+		}
+		&__image {
+			background-image: url('../images/home-page-studio-image-full.png');
+			background-position: center;
+		}
+	}
+
+	.home-insights {
+		&__container {
+		}
+		&__text {
+			width: 80%;
+			margin-top: 5%;
+		}
+		.materialpc-form .group.submit-group {
+			text-align: left;
+		}
+	}
+}
+
+@media (min-width: 1400px) {
+		.home-hero {
+			&__text {
+				margin-top: 40px;
+				margin-bottom: 40px;
+			}
+			&__container {
+				margin-top: 150px;
+				margin-bottom: 10%;
+			}
+		}
+
+	.home-start {
+		&__container {
+			background-size: cover;
+			height: 800px;
+		}
+		.group {
+			width: 300px;
+		}
+		.group:not(.submit-group) {
+			margin-left: 30%;
+			width: 400px;
+		}
+	}
+}

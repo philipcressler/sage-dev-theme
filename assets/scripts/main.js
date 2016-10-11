@@ -19,6 +19,136 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        var myNavBar = {
+            flagAdd: true,
+            elements: [],
+            init: function (elements) {
+                this.elements = elements;
+            },
+            add : function() {
+                if(this.flagAdd) {
+                    for(var i=0; i < this.elements.length; i++) {
+                        document.getElementById(this.elements[i]).className += " fixed-theme";
+                    }
+                    $('#menu-cta').addClass('btn--secondary');
+                    $('#header').addClass('navbar-fixed-top');
+                    $('#brand img').attr('src', templateUrl + '/dist/images/pp-magenta-logo.png');
+                    this.flagAdd = false;
+                }
+            },
+            remove: function() {
+                for(var i=0; i < this.elements.length; i++) {
+                    document.getElementById(this.elements[i]).className =
+                            document.getElementById(this.elements[i]).className.replace( /(?:^|\s)fixed-theme(?!\S)/g , '' );
+                }
+                $('#menu-cta').removeClass('btn--secondary');
+                $('#header').removeClass('navbar-fixed-top');
+                $('#brand img').attr('src', templateUrl + '/dist/images/power-post-logo-small-white.png');
+                this.flagAdd = true;
+            }
+        };
+
+        /**
+         * Init the object. Pass the object the array of elements
+         * that we want to change when the scroll goes down
+         */
+        myNavBar.init(  [
+            "header",
+            "header-container",
+            "brand"
+        ]);
+
+        /**
+         * Function that manage the direction
+         * of the scroll
+         */
+        function offSetManager(){
+
+            var yOffset = 0;
+            var currYOffSet = window.pageYOffset;
+
+            if(yOffset + 300 < currYOffSet) {
+                myNavBar.add();
+            }
+            else if(currYOffSet === yOffset){
+                myNavBar.remove();
+            }
+
+        }
+
+        /**
+         * bind to the document scroll detection
+         */
+        window.onscroll = function(e) {
+            offSetManager();
+        };
+
+        /**
+         * We have to do a first detectation of offset because the page
+         * could be load with scroll down set.
+         */
+        offSetManager();
+        var h;
+        var t;
+
+        if($(window).width() < 768) {
+          $('.home-hero__background img').attr('src', templateUrl + '/dist/images/mobile-hero.png');
+          h = $('.home-hero__background img').height();
+          t = $('.home-hero__xs-container').height();
+          $('.home-hero > .row').css('height', t + h);
+        } else if($(window).width() < 992 ) {
+          $('.home-hero__background img').attr('src', templateUrl + '/dist/images/tablet-hero.png'); 
+          h = $('.home-hero__background img').height();
+          t = $('.home-hero__xs-container').height();
+          $('.home-hero > .row').css('height', h);
+        } else {
+          $('.home-hero__background img').attr('src', templateUrl + '/dist/images/desktop-hero.png');
+          $('.row-eq').matchHeight();
+        }
+
+        $(window).resize(function() {
+          if($(window).width() < 768) {
+            $('.home-hero__background img').attr('src', templateUrl + '/dist/images/mobile-hero.png');
+            h = $('.home-hero__background img').height();
+            t = $('.home-hero__xs-container').height();
+            $('.home-hero > .row').css('height', t + h);          
+          } else if($(window).width() < 992 ) {
+            $('.home-hero__background img').attr('src', templateUrl + '/dist/images/tablet-hero.png'); 
+            h = $('.home-hero__background img').height();
+            $('.home-hero > .row').css('height', h);
+          } else {
+            $('.home-hero__background img').attr('src', templateUrl + '/dist/images/desktop-hero.png');
+            $('.row-eq').matchHeight();
+          }
+        });
+
+        $('.home-testimonial__card').matchHeight();
+        
+        $.fn.isValid = function(){
+            if(this.hasClass('nice-select')) {
+              var select = this.siblings('select');
+              return select[0].checkValidity();
+            } else {
+              return this[0].checkValidity();
+            }
+          }
+
+          $('form').focusout( function(e) {
+            var elem = e.target;
+            
+            if($( elem ).isValid()) {
+              $( '#' + $( elem ).attr('id') + ' ~ .validation').addClass('valid');
+              $( '#' + $( elem ).attr('id') + ' ~ .validation').removeClass('invalid');
+            } else {
+              $( '#' + $( elem ).attr('id') + ' ~ .validation').addClass('invalid');
+              $( '#' + $( elem ).attr('id') + ' ~ .validation').removeClass('valid');
+            }
+            if( $( elem ).val() === "") {
+              $( '#' + $( elem ).attr('id') + ' ~ .validation').removeClass('invalid');
+              $( '#' + $( elem ).attr('id') + ' ~ .validation').removeClass('valid');
+              $( 'label' ).removeClass('hover-active');
+            }
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -34,9 +164,11 @@
       }
     },
     // About us page, note the change from about-us to about_us.
-    'about_us': {
+    'software': {
       init: function() {
         // JavaScript to be fired on the about us page
+        
+
       }
     }
   };

@@ -31,3 +31,9 @@ function excerpt_more() {
   return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
+
+// Remove wp-admin bar
+function my_function_admin_bar(){ 
+  return false; 
+}
+add_filter( 'show_admin_bar' , __NAMESPACE__. '\\my_function_admin_bar');

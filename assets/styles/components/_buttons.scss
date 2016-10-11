@@ -1,0 +1,108 @@
+.btn {
+	font-family: 'Montserrat-Bold';
+	font-size: 14px;
+	text-transform: uppercase;
+	padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 45px;
+    padding-right: 45px;
+    letter-spacing: 1px;
+	border-radius: 50px;
+	line-height: 16px;
+	box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+	-webkit-transition: all .15s ease;
+    transition: all .15s ease;
+	
+	color: black;
+	background-color: $brand-primary;
+
+	&:active, &:focus {
+		outline: none;
+	}
+	&:active {
+		transform: translateY(20px);
+		-webkit-transform: translate(20px);
+	}
+	&--primary {
+		color: white;
+		background-color: $brand-primary;
+		&:hover {
+			color: white;
+			background-color: lighten($brand-primary, 10%);
+			-webkit-transform: translateY(-2px);
+    		transform: translateY(-2px);
+    		box-shadow: 0 7px 14px rgba(50,50,93,.1),0 3px 6px rgba(0,0,0,.08);
+		}
+	}
+
+	&--secondary {
+		color: $brand-primary;
+		background-color: white;
+		border: solid 2px $brand-primary;
+		&:hover {
+			border-color: lighten($brand-primary, 10%);
+			color: lighten($brand-primary, 10%);
+		    -webkit-transform: translateY(-1px);
+		    transform: translateY(-1px);
+		    box-shadow: 0 7px 14px rgba(50,50,93,.1),0 3px 6px rgba(0,0,0,.08);
+		}
+	}
+	&--reversed {
+		color: $brand-primary;
+		background-color: white;
+		&:hover {
+			color: lighten($brand-primary, 10%);
+		    -webkit-transform: translateY(-1px);
+		    transform: translateY(-1px);
+		    box-shadow: 0 7px 14px rgba(50,50,93,.1),0 3px 6px rgba(0,0,0,.08);
+		}
+		&.btn--secondary {
+			background-color: $purple;
+			border: solid 2px white;
+			color: white;
+		}
+	}
+	&--reversed-red {
+		color: $brand-primary;
+		background-color: white;
+		&:hover {
+			color: lighten($brand-primary, 10%);
+		    -webkit-transform: translateY(-1px);
+		    transform: translateY(-1px);
+		    box-shadow: 0 7px 14px rgba(50,50,93,.1),0 3px 6px rgba(0,0,0,.08);
+		}
+		&.btn--secondary {
+			background-color: $brand-primary;
+			color: white;
+			&:hover {
+				color: white;
+				background-color: lighten($brand-primary, 10%) !important;
+				-webkit-transform: translateY(-1px);
+			    transform: translateY(-1px);
+			    box-shadow: 0 7px 14px rgba(50,50,93,.1),0 3px 6px rgba(0,0,0,.08);
+			}
+		}
+	}
+
+	&--reversed-purple {
+		color: $purple;
+		background-color: white;
+		&:hover {
+			color: lighten($purple, 10%);
+		    -webkit-transform: translateY(-1px);
+		    transform: translateY(-1px);
+		    box-shadow: 0 7px 14px rgba(50,50,93,.1),0 3px 6px rgba(0,0,0,.08);
+		}
+		&.btn--secondary {
+			background-color: $purple;
+			color: white;
+			&:hover {
+				color: white;
+				background-color: lighten($brand-primary, 10%) !important;
+				-webkit-transform: translateY(-1px);
+			    transform: translateY(-1px);
+			    box-shadow: 0 7px 14px rgba(50,50,93,.1),0 3px 6px rgba(0,0,0,.08);
+			}
+		}
+	}
+}

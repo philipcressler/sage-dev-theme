@@ -13,3 +13,250 @@
   @extend .btn;
   @extend .btn-default;
 }
+
+.mce_inline_error {
+	display: none;
+}
+
+.materialpc-form input, .materialpc-form select {
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 300px;
+	border: none;
+	border-bottom: 2px solid #f1f1f1;
+	background-color: transparent;
+	border-radius: 0px;
+}
+
+.materialpc-form input, .materialpc-form select {
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 300px;
+	border: none;
+	border-bottom: 2px solid #f1f1f1;
+	background-color: transparent;
+	border-radius: 0px;
+}
+
+.materialpc-form input:focus {
+	outline: none;
+}
+
+.materialpc-form .validation::after {
+	content: "";
+	font-family: ElegantIcons;
+	font-size: 26px;
+	position: relative;
+    bottom: 35px;
+    right: -280px
+}
+
+label {
+	color: #888888;
+	font-size: 17px;
+	font-weight: normal;
+	font-family: 'Roboto';
+	position: absolute;
+	pointer-events: none;
+	left: 18px;
+	top: 10px;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-o-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+}
+.materialpc-form input:valid:placeholder-shown:not(:focus) ~ label{
+	color: #888888;
+	font-size: 17px;
+	font-weight: normal;
+	font-family: 'Roboto';
+	position: absolute;
+	pointer-events: none;
+	left: 18px;
+	top: 10px;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-o-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+}
+.materialpc-form input:focus ~ label {
+	top: -20px;
+	font-size: 14px;
+	color: #e52466 !important;
+}
+.materialpc-form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.materialpc-form select:focus {
+	outline: one;
+}
+.materialpc-form select:focus ~ label {
+	top: -20px;
+	font-size: 14px;
+	color: #e52466 !important;
+}
+
+.materialpc-form--reverse select:focus ~ label {
+	color: white !important;
+}
+
+.materialpc-form select ~ .validation:after {
+	content: "\f078";
+    font-family: "ElegantIcons";
+    font-size: 17px;
+    color: #888888;
+    right: -280px;
+    top: -30px;
+    padding: 0 0 2px;
+    position: relative;
+    pointer-events: none;
+}
+
+.materialpc-form select ~ .valid.validation:after, .materialpc-form input ~ .valid.validation:after {
+	content: '\4e';
+	color: #24e47a;
+	font-size: 17px;
+}
+.materialpc-form select ~ .invalid.validation:after, .materialpc-form input ~ .invalid.validation:after {
+	content: '\4d';
+	color: #ff5252;
+	font-size: 17px;
+}
+
+.materialpc-form select[value="*"] ~ label {
+	top: -20px;
+	font-size: 14px;
+	color: #888888;
+}
+
+.materialpc-form input:focus:required:invalid ~ label {
+	color:#e52466;
+	top: -20px;
+	font-size: 14px;
+}
+
+.materialpc-form input:invalid:not(:placeholder-shown) ~ label {
+	color:#ff5252;
+	top: -20px;
+	font-size: 14px;
+}
+.materialpc-form input:invalid:not(:placeholder-shown) {
+	border-color: #ff5252;
+}
+
+.materialpc-form input:valid ~ label{
+	top: -20px;
+	font-size: 14px;
+	color: #888888;
+}
+
+.hover {
+	top: -20px;
+	font-size: 14px;
+	color: #888888;	
+}
+
+.hover-active {
+	top: -20px;
+	font-size: 14px;
+	color: #e52466;		
+}
+
+.materialpc-form--reverse .hover-active {
+	color: white;
+}
+
+.materialpc-form--reverse input {
+	color: white;
+}
+.materialpc-form input:valid:placeholder-shown ~ .validation::after {
+	content: '';
+}
+
+.materialpc-form .bar {
+	position: relative;
+	display: block;
+	width: 300px;
+}
+
+.materialpc-form .bar:before, .materialpc-form .bar:after {
+		content: '';
+		height: 2px;
+		width: 0;
+		bottom: 1px;
+		position: absolute;
+		background: #e52466;
+		transition: 0.2s ease all;
+		-moz-transition: 0.2s ease all;
+		-o-transition: 0.2s ease all;
+		-webkit-transition: 0.2s ease all;	
+}
+
+.materialpc-form .bar:before {
+	left: 50%;
+}
+
+.materialpc-form .bar:after {
+	right: 50%;
+}
+
+.materialpc-form .group.submit-group {
+	text-align: center;
+}
+
+.materialpc-form input:focus ~ .bar:before, .materialpc-form input:focus ~ .bar:after {
+  width:50%;
+}
+
+.materialpc-form .highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+#studio-form input, #studio-form textarea {
+	color: black;
+}
+.materialpc-form input:focus ~ .highlight, .materialpc-form select:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+.materialpc-form--reverse input, .materialpc-form--reverse select {
+	border-bottom: 2px solid white;
+}
+
+.materialpc-form--reverse .bar:after, .materialpc-form--reverse .bar:before {
+	background: transparent;
+}
+
+//Individual Forms
+#subscriber-form {
+	margin-top: 40px;
+	margin-bottom: 20px;
+}

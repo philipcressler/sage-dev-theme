@@ -339,6 +339,6 @@ gulp.task('deployBase', function() {
         .pipe(sftp(sftpOpts()));
 });
 gulp.task('deploy', function() {
-    runSequence('deployJSON', 'deployCSS', 'deployImages', 'deployJS', 'deployFonts', 'deployLib', 'deployTemplates', 'deployBase'):
+    runSequence('deployJSON', 'deployCSS', 'deployImages', 'deployJS', 'deployFonts', 'deployLib', 'deployTemplates', 'deployBase');
 
 });

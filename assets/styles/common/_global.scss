@@ -1,1 +1,81 @@
+/**********************************************
+* FONTS
+**********************************************/
 
+@font-face {
+	font-family: Montserrat-Black;
+	src: url('../fonts/Montserrat-Black.ttf');
+}
+
+@font-face {
+	font-family: 'Montserrat-Bold';
+	src: url('../fonts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+	font-family: Montserrat-Light;
+	src: url('../fonts/Montserrat-Light.ttf');
+}
+
+@font-face {
+	font-family: Montserrat-Regular;
+	src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+	font-family: Montserrat-Thin;
+	src: url('../fonts/Montserrat-Thin.ttf');
+}
+
+@font-face {
+	font-family: ElegantIcons;
+	src: url('../fonts/ElegantIcons.ttf');
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'ElegantIcons';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/**********************************************
+* TYPOGRAPHY
+**********************************************/
+
+p {
+	font-family: 'Montserrat-Light';
+	font-size: 14px;
+	line-height: 23px;
+	color: $text-color;
+}
+
+p.subheading {
+	font-family: 'Montserrat-Regular';
+	font-size: 18px;
+}
+
+h1,h2,h3,h4,h5 {
+	font-family: 'Montserrat-Black';
+	color: $text-color;
+	line-height: 36px;
+	font-weight: normal;
+}
+
+h1,h2 {
+	font-size: 30px;
+}
+
+.reversed {
+	color: white;
+}
+
+/**********************************************
+* MAIN STYLES
+**********************************************/
