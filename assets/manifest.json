@@ -17,11 +17,16 @@
         "scripts/customizer.js"
       ]
     },
+    "slick.min.js": {
+      "files": [
+        "scripts/slick.min.js"
+      ]
+    },
     "jquery.js": {
       "bower": ["jquery"]
     }
   },
   "config": {
-    "devUrl": "http://powerpost-site.dev"
+    "devUrl": "http://local.wordpress.dev"
   }
 }

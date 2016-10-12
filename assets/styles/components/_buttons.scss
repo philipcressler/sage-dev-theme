@@ -33,6 +33,27 @@
     		transform: translateY(-2px);
     		box-shadow: 0 7px 14px rgba(50,50,93,.1),0 3px 6px rgba(0,0,0,.08);
 		}
+
+		&--enterprise {
+			background-color: $enterprise;
+			&:hover {
+				background-color: lighten($enterprise, 10%);
+			}
+		}
+
+		&--agency {
+			background-color: $agency;
+			&:hover {
+				background-color: lighten($agency, 10%);
+			}
+		}
+
+		&--light-blue {
+			background-color: $light-blue;
+			&:hover {
+				background-color: darken($light-blue, 10%);
+			}
+		}
 	}
 
 	&--secondary {

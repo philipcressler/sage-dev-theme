@@ -79,3 +79,140 @@ h1,h2 {
 /**********************************************
 * MAIN STYLES
 **********************************************/
+
+
+/**********************************************
+* PRICING TABLES
+**********************************************/
+
+.pricing-unit {
+background: #FFFFFF;
+box-shadow: 0px 3px 9px 1px rgba(0,0,0,0.15);
+border-radius: 9px;
+padding: 20px;
+max-width: 400px;
+margin: 0 auto;
+	&__h2 {
+		margin-top: 0px;
+		font-size: 40px;
+		&--primary {
+			color: $brand-primary;
+		}
+	}
+	&__text {
+			line-height: 28px;
+			margin-top: 40px;
+			margin-bottom: 40px;
+	}
+	&__subheading {
+		font-family: 'Montserrat-Bold';
+		font-size: 14px;
+		line-height: 20px;
+		text-transform: uppercase;
+		&--primary {
+			color: $brand-primary;
+		}
+	}
+	&__cost-container {
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+	&__dollar {
+		font-family: 'Montserrat-Light';
+		font-size: 32px;
+		line-height: 75px;
+		vertical-align: top;
+	}
+
+	&__price {
+		font-family: 'Montserrat-Black';
+		font-size: 63px;
+		line-height: 75px;
+	}
+
+	&__month {
+		font-family: 'Montserrat-Light';
+		font-size: 18px;
+	}
+
+	&__cta {
+		width: 90%;
+		margin: 0 auto;
+		a {
+			letter-spacing: 0.89px;
+			line-height: 14px !important;
+			font-size: 12px !important;
+			padding-left: 20px !important;
+			padding-right: 20px !important;
+		}
+	}
+
+	&__features-list {
+		padding: 0;
+		width: 90%;
+		margin: 0 auto;
+		margin-top: 20px;
+		list-style: none;
+		li {
+			font-family: 'Montserrat-Light';
+			font-size: 14px;
+			line-height: 40px;
+		}
+		.sub-li {
+			opacity: 0.5;
+			font-size: 12px;
+			line-height: 12px;
+		}
+		.head-li {
+			line-height: 28px;
+		}
+	}
+
+	&__savings {
+		width: 90%;
+		margin: 0 auto;
+		margin-top: 40px;
+		a {
+			color: $text-color;
+			font-family: 'Montserrat-Regular';
+			font-size: 13px;
+		}
+	}
+}
+
+.panel-group .panel {
+	border-right: none !important;
+	border-left: none;
+	border-radius: 0px;
+	box-shadow: none;
+	h4 {
+		font-size: 15px;
+		font-family: "Montserrat-Light";
+	}
+	a {
+		color: $text-color;
+		text-decoration: none;
+		&:hover {
+			color: $brand-primary;
+		}
+		&:active, &:focus {
+			color: $text-color;
+			text-decoration: none;
+		}
+		&[aria-expanded='true'] {
+			color: $brand-primary;
+
+			span {
+				-webkit-transform: rotate(90deg);
+				transform: rotate(90deg);
+				-moz-transform: rotate(90deg);
+			}
+		}
+	}
+
+	.toggle-icon {
+		float:right;
+		font-size: 24px;
+	}
+}

@@ -88,9 +88,44 @@
          * could be load with scroll down set.
          */
         offSetManager();
+
+        
+        $.fn.isValid = function(){
+            if(this.hasClass('nice-select')) {
+              var select = this.siblings('select');
+              return select[0].checkValidity();
+            } else {
+              return this[0].checkValidity();
+            }
+          };
+
+          $('form').focusout( function(e) {
+            var elem = e.target;
+            
+            if($( elem ).isValid()) {
+              $( '#' + $( elem ).attr('id') + ' ~ .validation').addClass('valid');
+              $( '#' + $( elem ).attr('id') + ' ~ .validation').removeClass('invalid');
+            } else {
+              $( '#' + $( elem ).attr('id') + ' ~ .validation').addClass('invalid');
+              $( '#' + $( elem ).attr('id') + ' ~ .validation').removeClass('valid');
+            }
+            if( $( elem ).val() === "") {
+              $( '#' + $( elem ).attr('id') + ' ~ .validation').removeClass('invalid');
+              $( '#' + $( elem ).attr('id') + ' ~ .validation').removeClass('valid');
+              $( 'label' ).removeClass('hover-active');
+            }
+        });
+      },
+      finalize: function() {
+        // JavaScript to be fired on all pages, after page specific JS is fired
+      }
+    },
+    // Home page
+    'home': {
+      init: function() {
+        // JavaScript to be fired on the home page
         var h;
         var t;
-
         if($(window).width() < 768) {
           $('.home-hero__background img').attr('src', templateUrl + '/dist/images/mobile-hero.png');
           h = $('.home-hero__background img').height();
@@ -123,41 +158,6 @@
         });
 
         $('.home-testimonial__card').matchHeight();
-        
-        $.fn.isValid = function(){
-            if(this.hasClass('nice-select')) {
-              var select = this.siblings('select');
-              return select[0].checkValidity();
-            } else {
-              return this[0].checkValidity();
-            }
-          }
-
-          $('form').focusout( function(e) {
-            var elem = e.target;
-            
-            if($( elem ).isValid()) {
-              $( '#' + $( elem ).attr('id') + ' ~ .validation').addClass('valid');
-              $( '#' + $( elem ).attr('id') + ' ~ .validation').removeClass('invalid');
-            } else {
-              $( '#' + $( elem ).attr('id') + ' ~ .validation').addClass('invalid');
-              $( '#' + $( elem ).attr('id') + ' ~ .validation').removeClass('valid');
-            }
-            if( $( elem ).val() === "") {
-              $( '#' + $( elem ).attr('id') + ' ~ .validation').removeClass('invalid');
-              $( '#' + $( elem ).attr('id') + ' ~ .validation').removeClass('valid');
-              $( 'label' ).removeClass('hover-active');
-            }
-        });
-      },
-      finalize: function() {
-        // JavaScript to be fired on all pages, after page specific JS is fired
-      }
-    },
-    // Home page
-    'home': {
-      init: function() {
-        // JavaScript to be fired on the home page
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
@@ -167,8 +167,48 @@
     'software': {
       init: function() {
         // JavaScript to be fired on the about us page
-        
+        $('#pricing-unit').affix({ offset: { 
+          top: $('.software-business').offset().top - 100 ,
+          bottom: $('.home-testimonial').outerHeight(true) + $('footer').outerHeight(true) + $('.software-links').outerHeight(true)
+          }
+         });
 
+        $('.home-testimonial__card').matchHeight();
+      }
+    },
+
+    'pricing': {
+      init: function() {
+        $('#pricing-toggle a').click(function(e) {
+          e.preventDefault();
+          $(this).tab('show');
+        });
+        $('.row-eq').matchHeight();
+        $('.background-eq').matchHeight();
+
+      }
+    },
+
+    'studio': {
+      init: function() {
+        $('.row-eq').matchHeight();  
+        
+        if($(window).width() < 768) {
+          $('.studio-two__image img').attr('src', templateUrl + '/dist/images/studio-two-image-mobile.png');
+        } else {
+          $('.studio-two__image img').attr('src', templateUrl + '/dist/images/studio-two-image-full.png');
+        }
+
+        $(window).resize(function() {
+          if($(window).width() < 768) {
+            $('.studio-two__image img').attr('src', templateUrl + '/dist/images/studio-two-image-mobile.png');      
+          } else {
+            $('.studio-two__image img').attr('src', templateUrl + '/dist/images/studio-two-image-full.png');
+          }
+        });
+        $('.dont').slick({
+
+        });
       }
     }
   };

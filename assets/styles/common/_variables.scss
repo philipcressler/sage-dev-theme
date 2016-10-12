@@ -7,5 +7,15 @@ $sidebar-sm-columns:    4;
 
 // Colors
 $brand-primary:         #E52466;
-$text-color:			#888888;
-$purple:				#7545C1;
+$text-color:						#888888;
+$purple:								#7545C1;
+
+$enterprise: 						#A452F3;
+$agency:								#DE4BF8;
+$light-blue:            #CFD8DC;
+$active-button:         #AC1A4C;
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}

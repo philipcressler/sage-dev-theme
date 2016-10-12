@@ -24,14 +24,21 @@
 	}
 }
 
+.software {
+	h3 {
+		font-family: 'Montserrat-Bold';
+		font-size: 16px;
+	}
+}
+
 .software-wordpress {
 	padding-bottom: 50px;
-
+	.img-responsive.hidden-md {
+		margin-top: 40px;
+	}
 	&__image {
 		text-align: center;
-		img {
-			margin: 0 auto;
-		}
+
 	}
 
 	&__heading {
@@ -48,19 +55,23 @@
 	}
 }
 
+.software-headline {
+		text-align: center;
+}
 .software-editor {
 	padding-bottom: 50px;
 
+	.img-responsive.hidden-md {
+		margin-top: 40px;
+	}
+
 	&__image {
 		text-align: center;
-		img {
-			margin: 0 auto;
-		}
+
 	}
 
 	&__heading {
-		text-align: center;
-		width: 80%;
+		width: 90%;
 		margin: 0 auto;
 	}
 
@@ -85,7 +96,12 @@
 
 .software-calendar {
 	&__heading {
-		text-align: center;
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.img-responsive.hidden-md {
+		margin-top: 40px;
 	}
 
 	&__container {
@@ -93,21 +109,176 @@
 			padding: 10px;
 		}
 	}
-	img {
-		margin-top: 20px;
-		margin-bottom: 20px;
-	}
 	p {
     	width: 90%;
     	margin: 0 auto;
     }
 }
 
+.software-manage {
+	&__heading {
+		width: 90%;
+		margin: 0 auto;
+	}
 
+	.img-responsive.hidden-md {
+		margin-top: 40px;
+	}
+
+	&__container {
+		img {
+			padding: 10px;
+		}
+	}
+	p {
+    	width: 90%;
+    	margin: 0 auto;
+    }	
+}
+
+.software-business {
+		&__pricing-xs {
+			margin-top: 40px;
+		}
+		h2 {
+			width: 90%;
+			margin: 0 auto;
+			margin-bottom: 10px;
+			margin-top: 30px;
+		}
+		p {
+			width: 90%;
+			margin: 0 auto;
+		}
+		h3 {
+			width: 90%;
+			margin: 0 auto;
+			margin-bottom: 15px;
+			margin-top: 15px;
+
+		}
+
+		&__models {
+			text-align: center;
+			.subheading {
+				text-transform: uppercase;
+				font-family: 'Montserrat-Bold';
+				font-size: 16px;
+			}
+			.btn {
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+		}
+
+		&__enterprise {
+			h2 {
+				color: $enterprise;
+				font-size: 34px;
+			}
+			.subheading {
+				color: $enterprise;
+			}
+		}
+
+		&__agency {
+			h2 {
+				color: $agency;
+				font-size: 34px;
+			}
+			.subheading {
+				color: $agency;
+			}
+		}
+
+		&__cta {
+			text-align: center;
+			h2 {
+				font-size: 24px;
+
+			}
+
+			form {
+				margin-top: 40px;
+				margin-bottom: 20px;
+
+				.submit-group {
+					margin-top: 20px;
+				}
+			}
+		}
+}
+
+.software-links {
+
+	&__insights, &__studio {
+		background: #FFFFFF;
+		box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.20);
+		border-radius: 3px;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		margin-top: 40px;
+		margin-bottom: 40px;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
 @media (min-width: 768px) {
 	.software-hero {
 		&__background {
 			top: -200px;
+		}
+	}
+
+	.software-calendar {
+		&__image {
+			img {
+				margin: 0 auto;
+				margin-top: 40px;
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.software-manage {
+		&__image {
+			img {
+				padding: 40px;
+			}
+		}
+	}
+
+	.software-business {
+		.affix {
+  		top: 100px;
+  		width: 33.333333%;
+  		padding-left: 15px;
+  		padding-right: 15px;
+  		left:0;
+		}
+
+		.affix-bottom {
+			position: relative;
+		}
+		&__pricing-xs {
+			width: 50%;
+			margin: 0 auto;
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+		&__works {
+			.row {
+				margin-left: 1%;
+			}
+		}
+
+		&__cta {
+
+			form {
+				.submit-group {
+					margin-top: 0px;
+				}
+			}
 		}
 	}
 }
@@ -129,12 +300,24 @@
 		}
 	}
 
+	.software-headline {
+		&__container {
+			margin: 0 auto;
+			width: 70%;
+		}
+	}
 	.software-wordpress {
 		&__heading {
 			text-align: left;
 		}
 		&__container {
 			padding-top: 1%;
+		}
+		&__image {
+
+		}
+		img {
+
 		}
 	}
 
@@ -150,6 +333,13 @@
 				width: 100%;
 			}
 		}
+		&__image {
+			overflow-x: hidden;
+		}
+		img {
+			max-height: 600px;
+			max-width: 600px;
+		}
 	}
 
 	.software-calendar {
@@ -162,6 +352,37 @@
 		}
 		&__heading {
 			text-align: left;
+			width: 100%;
+		}
+		&__image {
+			overflow-x: hidden;
+		}
+		img {
+			max-height: 500px;
+			max-width: 600px;
+			margin-left: 0px;
+		}
+	}
+
+	.software-manage {
+		p {
+			width: 100%;
+		}
+		&__container {
+		    padding-left: 5%;
+		    padding-top: 5%;
+		}
+		&__heading {
+			text-align: left;
+			width: 100%;
+		}
+		&__image {
+			overflow-x: hidden;
+		}
+		img {
+			max-height: 600px;
+			max-width: 600px;
+			margin-left: 0px;
 		}
 	}
 }
@@ -171,16 +392,37 @@
 		&__heading {
 
 		}
-	}	
+	}
+	.software-links  {
+		&__studio, &__insights {
+			padding-left: 15%;
+			padding-right: 15%;
+		}
+	}
 }
 
 @media (min-width: 1400px) {
+	.software section {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
 	.software-hero {
 		&__background {
 			height: 600px;
 			top: -300px;
 		}
-	}	
+	}
+
+	.software-wordpress {
+		&__text {
+			width: 80%;
+			padding-top: 40px;
+		}
+
+		&__heading {
+			width: 80%;
+		}
+	}
 }
 
 @media (min-width: 1800px) {
@@ -191,7 +433,7 @@
 		}
 	}
 
-	.software-editor__container, .software-wordpress__container, .software-calendar__container {
+	.software-editor__container, .software-wordpress__container, .software-calendar__container, .software-manage__container {
 		p {
 			width: 60%;
 			margin: 0 auto;
